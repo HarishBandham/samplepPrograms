@@ -25,7 +25,8 @@ public class DuplicateElement {
 		mapResult.forEach((k,v)->System.out.println(k+" - "+v));
 		
 		System.out.println("-------------set---------------\n");
-		//print only duplicate elements
+		//print only duplicate elements 
+		//76, 3, 45, 56, 76, 9, 76, 45,0, 3
 		Set<Integer> duplicate = new HashSet<>();
 		Set<Integer> duplicate1 =  
 		list.stream().filter(x->!duplicate.add(x)).collect(Collectors.toSet());

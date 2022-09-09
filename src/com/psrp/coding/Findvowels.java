@@ -1,4 +1,4 @@
-package com.programs;
+package com.psrp.coding;
 
 import java.util.Comparator;
 import java.util.Map;
