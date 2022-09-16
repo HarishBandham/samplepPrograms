@@ -9,7 +9,7 @@ public class CharacterOccurence {
     public static void main(String[] args) {
 
         String strValue = "organization";
-
+        
         System.out.println(findEachCharacterOccurence(strValue));
     }
 

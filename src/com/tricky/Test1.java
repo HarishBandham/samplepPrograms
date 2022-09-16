@@ -10,3 +10,4 @@ public class Test1 {
         System.out.println(s1 == s2);
     }
 }
+	

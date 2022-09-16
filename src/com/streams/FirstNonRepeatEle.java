@@ -1,22 +1,39 @@
 package com.streams;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FirstNonRepeatEle {
 
 	public static void main(String[] args) {
 
-		List<Integer> list = new ArrayList<>(
-				Arrays.asList(76, 3, 45, 56, 76, 9, 76, 45,0, 3 ));
+		int arr[] = {5,3,4,2,1,3,2,5,4,6,8,3};
+		List<Integer> list = Arrays.stream(arr).boxed().collect(Collectors.toList());
+		System.out.println(FindNonrepeatElement(list));
+		System.out.println(FindNonrepeatElements(list));
 		
-		int nonOccurrence = list.stream()
+		//List<Integer> list = new ArrayList<>(
+		//		Arrays.asList(5,3,4,2,1,3,2,5,4,6,8,3));
+	}
+
+	private static <I> List<I> FindNonrepeatElements(List<I> list) {
+
+		List<I> nonRepeatElements = list.stream()
+				.filter(i->Collections.frequency(list, i)==1)
+				.collect(Collectors.toList());
+		//System.out.println(nonRepeatElements);
+		
+		return nonRepeatElements;
+	}
+
+	private static int FindNonrepeatElement(List<Integer> list) {
+		int FirstnonRepeatElemet = list.stream()
 				.filter(i->Collections.frequency(list, i)==1)
 				.findFirst().get();
-		
-		System.out.println(nonOccurrence);
+		//System.out.println(FirstnonRepeatElemet);
+		return FirstnonRepeatElemet;
 	}
 
 }

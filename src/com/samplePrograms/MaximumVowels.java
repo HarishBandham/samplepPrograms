@@ -12,11 +12,11 @@ public class MaximumVowels {
 
 	public static void main(String[] args) {
 		String s = "The quick brown fox jumps right over the little lazy dog";
-		System.out.println(getWordsWithMaxVowels(s));
+		//System.out.println(getMaxVowelsWords(s));
 		secondApproch();
 	}
 
-	static Set<String> getWordsWithMaxVowels(String s) {
+	static Set<String> getMaxVowelsWords(String s) {
 		Function<String, Long> c = t -> t.chars().filter(d -> d == 'a' || d == 'e' || d == 'i' || d == 'o' || d == 'u')
 				.count();
 		Map<String, Long> map = Stream.of(s.split(" ")).collect(Collectors.toMap(t -> t, t -> c.apply(t)));
@@ -31,9 +31,9 @@ public class MaximumVowels {
 	String input="The quick brown fox jumps right over the little lazy dog.";
     String[] words=input.split(" ");
     String regex="[^aeiouAEIOU]";
-    
     int maxNoOfVowels=Arrays.stream(words)
             .map(w->w.replaceAll(regex, ""))
+            .peek(x->System.out.println(x))
             .max(Comparator.comparing(String::length)).get().length();
     
     Arrays.stream(words)
