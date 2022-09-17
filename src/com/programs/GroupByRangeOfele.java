@@ -12,7 +12,6 @@ public class GroupByRangeOfele {
 		Map<Integer, List<Integer>> map = Stream.of(2, 34, 54, 23, 33, 20, 59, 11, 19, 37)
         .collect(Collectors.groupingBy (i -> i/10 * 10 ) );        
         System.out.println(map);
-        System.out.println(34/10*10);
 	}
 
 }
