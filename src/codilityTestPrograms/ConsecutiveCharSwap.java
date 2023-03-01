@@ -12,9 +12,9 @@ public class ConsecutiveCharSwap {
 	private static int solution(String str) {
 		if(str==null || str.isEmpty()){
 			return 0;
-			}
-			if(str.length() < 3)
-			return 0;
+		}
+		if(str.length() < 3)
+		return 0;
 			
 		String a = "aaa";
 		String b= "bbb";

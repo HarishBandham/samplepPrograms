@@ -11,16 +11,16 @@ public class FindNumberOfPairs2 {
 	        Map<Integer,Integer> hm = new HashMap<>();
 	        int count=0;
 	    for(int a:arr) {
-	    	int b= sum-a;
-	    	if(hm.containsKey(b)) {
-	    		count=count + hm.get(sum-a);
-			}
-	    	
-			if (hm.containsKey(a)) {
-				hm.put(a, hm.get(a) + 1);
-			} else {
-				hm.put(a, 1);
-			}	
+		    	int b= sum-a;
+		    	if(hm.containsKey(b)) {
+		    		count=count + hm.get(sum-a);
+				}
+		    	
+				if (hm.containsKey(a)) {
+					hm.put(a, hm.get(a) + 1);
+				} else {
+					hm.put(a, 1);
+				}	
 	    	
 	    }
 	    System.out.println(count);

@@ -13,13 +13,15 @@ public class ConvertListToMap {
 
 	public static void main(String[] args) {
 
-		List<String> cards = Arrays.asList("Visa", "MasterCard", 
+		List<String> cards = Arrays.asList("Visa", "MasterCard", "Visa",
 				"American Express", "Visa1");
 		
 		Map<String,Integer> listToMap =cards.stream()
-								.collect(Collectors.toMap(Function.identity(),
+								.collect(Collectors.toMap(
+										//Function.identity(),
+										x->x,
 										String::length,
-										(e1, e2) -> e1,
+										(old, new1) -> new1,
 										HashMap::new));
 		System.out.println(listToMap);
 		

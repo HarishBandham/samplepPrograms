@@ -28,7 +28,7 @@ public class EmpMain {
 		employeeList.add(new Employee(277, "Anuj Chettiar", 31, "Male", "Product Development", 2012, 35700.0));
 
 		employeeList.stream()
-		.sorted(Comparator.comparingDouble(Employee::getSalary))
+		.sorted(Comparator.comparingDouble(Employee::getSalary).reversed())
 		.forEach(x->System.out.println(x.getSalary()));
 		
 		System.out.println(findNthHighestEarnedEmployee(employeeList,2));
