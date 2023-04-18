@@ -15,7 +15,8 @@ public class CharacterOccurence {
 
     private static Map<Character,Long> findEachCharacterOccurence(String strValue) {
 
-        return strValue.replaceAll(" ","").chars().mapToObj(x->(char)x)
+        return strValue.replaceAll(" ","").
+        		chars().mapToObj(x->(char)x)
                 .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
     }
 }

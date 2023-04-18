@@ -1,8 +1,11 @@
 package com.programs;
 
+import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Objects;
 import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -15,6 +18,7 @@ public class Findvowels {
 		String input = "The quick brown fox jumps right sdsfsfdd over the little lazy dog.";
 		// output: quick, over, little
 		// a e i o u
+		findWordsWithMaxVowelOccurrence(input);
 		Function<String, Long> c = t -> t.chars().filter(d -> d == 'a' || d == 'e' || d == 'i' || d == 'o' || d == 'u')
 				.count();
 
@@ -27,9 +31,20 @@ public class Findvowels {
 				Collectors.groupingBy(x -> x.getValue(), Collectors.mapping(x -> x.getKey(), Collectors.toSet())));
 
 		if (results.containsKey(highestValue)) {
-			System.out.println(results.get(highestValue));
+			//System.out.println(results.get(highestValue));
 		}
 
+	}
+
+	static void findWordsWithMaxVowelOccurrence(String str) {
+		Map<String, Integer> collect = Arrays.stream(str.split(" "))
+				.collect(Collectors.toMap(e -> e, e -> e.replaceAll("[^aeiouAEIOU]", "").length()));
+		Integer value = collect.entrySet().stream().max(Map.Entry.comparingByValue()).get().getValue();
+		collect.forEach((key, value1) -> {
+			if (Objects.equals(value1, value)) {
+				//System.out.println(key);
+			}
+		});
 	}
 	/*
 	 * static Long checkVowelsCount(String str) {

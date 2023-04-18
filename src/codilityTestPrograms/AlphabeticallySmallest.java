@@ -8,7 +8,7 @@ public class AlphabeticallySmallest {
 	 
 	        String s = "codility";
 	        System.out.println(smallest(s));
-	        System.out.println(smallest1(s));
+	        //System.out.println(smallest1(s));
 	    }
 	    
 	    private static char[] smallest1(String s) {

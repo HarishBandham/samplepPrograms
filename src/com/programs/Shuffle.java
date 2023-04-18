@@ -12,9 +12,11 @@ public class Shuffle {
 		//output ->1111100000
 		
 		//IntStream listInt = 
-		Stream<Character> listInt = str.chars().mapToObj(x->(char)x)
+		Stream<Character> listInt = str.chars()
+				.mapToObj(x->(char)x)
 				.sorted(Comparator.reverseOrder());
-		String s1=listInt.map(Object::toString).collect(Collectors.joining());
+		String s1=listInt.map(Object::toString)
+				.collect(Collectors.joining());
 		System.out.println(s1);				
 		
 		
