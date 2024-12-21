@@ -5,7 +5,7 @@ import java.util.stream.IntStream;
 public class ReverseStrNotSpecialChar {
 
 	public static void main(String[] args) {
-        String input = "Swa$pn&il";
+         String input = "Swa$pn&il";
          String[] arr = input.split("");
          String regex = "[^0-9a-zA-Z]";
      
